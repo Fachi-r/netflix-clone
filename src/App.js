@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import "./App.css";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
@@ -6,12 +7,16 @@ import Row from "./components/Row";
 import requests from "./requests";
 
 function App() {
-   document.title = "Netflix?";
    return (
       <div className="App">
-         <head>
-            <title>Netlix?</title>
-         </head>
+         <Helmet>
+            <meta charSet="utf-8" />
+            <title>Netflix?</title>
+            <meta
+               http-equiv="Content-Security-Policy"
+               content="upgrade-insecure-requests"
+            />
+         </Helmet>
          <Nav />
          <Banner />
          <Row
