@@ -11,7 +11,7 @@
 body {
    color: white;
    background-color: #111;
-   overscroll-behavior: none;
+   /* overscroll-behavior: none; */
 }
 a {
    text-decoration: none;
