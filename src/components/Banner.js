@@ -8,6 +8,7 @@ const base_url = "https://image.tmdb.org/t/p/original";
 
 function Banner() {
    const [movie, setMovie] = useState([]);
+   const [loading, setLoading] = useState(true);
 
    useEffect(() => {
       async function fetchData() {
@@ -45,7 +46,9 @@ function Banner() {
 
             {/* <p className="banner__description">{movie?.overview}</p> */}
             <p className="banner__description">
-               {truncate(movie?.overview, 300)}
+               {window.innerWidth < 438
+                  ? truncate(movie?.overview, 200)
+                  : truncate(movie?.overview, 300)}
             </p>
          </div>
       </header>

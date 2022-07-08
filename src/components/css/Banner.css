@@ -1,7 +1,7 @@
 .banner {
    --text-shaddow: #111 1px 0 10px;
    position: relative;
-   height: clamp(23rem, 65vh + 8rem, 450px);
+   background-position: center;
 }
 .banner__title {
    font-size: clamp(2rem, 4vw + 1rem, 3rem);
@@ -50,8 +50,18 @@
    background: linear-gradient(transparent, rgba(37, 37, 37, 0.61), #111);
 }
 
-@media screen and (min-width: 768px) {
+@media not screen and (max-width: 438px) {
    .banner {
+      height: clamp(23rem, 65vh + 8rem, 450px);
       background-position: top 10% right 0px;
+   }
+}
+@media screen and (max-width: 438px) {
+   .banner {
+      aspect-ratio: 14 / 13;
+      width: 100vw;
+   }
+   .banner__contents {
+      bottom: 2rem;
    }
 }

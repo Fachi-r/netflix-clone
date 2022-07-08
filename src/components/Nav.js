@@ -11,7 +11,13 @@ function Nav() {
          //         handleShow(false);
          //      }
          //   });
-         window.scrollY > 110 ? handleShow(true) : handleShow(false);
+         window.innerWidth < 438
+            ? window.scrollY > 75
+               ? handleShow(true)
+               : handleShow(false)
+            : window.scrollY > 110
+            ? handleShow(true)
+            : handleShow(false);
       });
       //   return () => {
       //      window.removeEventListener("scroll");
